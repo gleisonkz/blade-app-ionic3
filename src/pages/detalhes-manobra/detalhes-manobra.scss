@@ -1,0 +1,23 @@
+page-detalhes-manobra {
+
+  $corDaFonte : rgba(255, 255, 255, 0.651) !important;
+
+  p{
+    color: $corDaFonte;
+    text-align: justify;
+   }
+
+   h2{
+    color: $corDaFonte;
+   }
+
+   .bordaStyle{
+
+    border: solid;
+    border-color: transparent;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+  }
+
+}

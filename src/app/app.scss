@@ -1,0 +1,76 @@
+ion-content{
+  background-image: linear-gradient(rgb(45, 105, 233),rgba(255, 153, 0, 0.637));
+}
+
+$backgroundPadrao : linear-gradient(rgb(45, 105, 233),rgba(255, 153, 0, 0.637));
+
+.buttonStyle{
+  background-image: radial-gradient(rgba(180, 180, 29, 0.973),#871515);
+  border: 1.5px solid;
+  border-color: black;
+
+}
+
+.backgroundPadrao2{
+
+  background-image: linear-gradient(rgba(255, 255, 255, 0.849),rgba(167, 164, 164, 0.692));
+}
+
+ion-header{
+
+  .toolbar {
+
+    .toolbar-background {
+      background: transparent;
+    }
+    .toolbar-title {
+      color: black;
+    }
+  }
+}
+
+.centralizar{
+
+  float: none;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.bgTransparent{
+
+  background-color: transparent;
+}
+
+.bordaStyleTransparent{
+
+  border: 20px solid;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.alert-wrapper{
+  background-image: linear-gradient(rgb(45, 105, 233),rgba(255, 153, 0, 0.637));
+
+
+
+  .alert-radio-label{
+    color: white ;
+  }
+
+  .alert-title{
+    color: white ;
+  }
+
+  .alert-button{
+    color: white;
+  }
+
+  .alert-sub-title{
+    color: white;
+    padding-top: 15px;
+  }
+
+}
+
+

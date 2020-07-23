@@ -1,0 +1,90 @@
+page-modal-jogadores {
+
+  $cinzaPadrao :  rgba(218, 205, 205, 0.952);
+
+::-webkit-scrollbar-track
+{
+box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+border-radius: 10px!important;
+background-color: transparent!important;
+}
+
+::-webkit-scrollbar
+{
+width: 10px!important;
+background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb
+{
+border-radius: 10px!important;
+box-shadow: inset 0 0 6px rgba(0,0,0,.3)!important;
+background-color: transparent !important;
+}
+
+label{
+  font-size: 18px;
+  color: white;
+}
+
+.bordaStyle{
+
+  border: solid;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+ion-input{
+  .text-input{ text-align: center; };
+  width: 50%;
+}
+
+.item.item-input {
+  border: none;
+  position: relative;
+  background-color: transparent;
+  width:100%;
+  color: white; //cor da fonte do valor digitado no input
+  }
+
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: white;
+  }
+
+  .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
+    color:white; //label color when focusing
+  }
+  .item-input .label-md{
+    color: white; //label color
+  }
+
+
+  
+  .item{
+    background-color: transparent;
+    color: white;
+    }
+
+    ion-select {
+      .select-icon {
+        .select-icon-inner {
+           color : white !important;
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+

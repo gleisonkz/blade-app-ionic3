@@ -1,0 +1,24 @@
+page-home {
+
+  .scroll-content {
+    overflow: hidden;
+  }
+
+  ion-list {
+    overflow-y: auto;
+    max-height: 72vh;
+  }
+
+  ion-row{
+    text-align: center;
+  }
+
+  img{
+    min-width: 300px;
+    min-height: 300px;
+  }
+
+
+}
+
+

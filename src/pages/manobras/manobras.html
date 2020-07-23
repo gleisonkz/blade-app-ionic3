@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Lista de Manobras | {{listaManobras.length}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- LISTA DE MANOBRAS - GERAL -->
+  <ion-grid>
+  <ion-item>
+    <ion-label color="primary" floating>Pesquisar</ion-label>
+    <ion-input id="inputElement" required="true" floating type="text" #elementoInput></ion-input>
+  </ion-item>
+
+  <ion-row *ngFor="let manobra of listaManobras">
+    <ion-col (click)="exibirModalDetalhesManobra(manobra)">
+      <div>
+        <hr>
+        <label>
+          <strong>
+            {{manobra.Nome}}
+          </strong> - Clique para
+          exibir
+        </label>
+      </div>
+      <hr>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+
+
+
+
+
+</ion-content>

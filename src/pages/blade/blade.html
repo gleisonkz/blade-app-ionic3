@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- CARD COM A RODADA ATUAL ,NOMES DOS JOGADORES E RESULTADOS -->
+  <ion-card style="background-color:transparent; height: 36%" class="bordaStyle">
+    <ion-card-title style="text-align: center">
+      <!-- APRESENTA QUAL A RODADA ATUAL -->
+      <div>
+        <img src="/assets/imgs/bladeSoul-low.png" height="80px">
+        <span style="color: black;">Rodada {{rodada}} - {{DicNivel.get(nivelSelecionado)}}</span>
+      </div>
+
+
+
+    </ion-card-title>
+
+    <!-- GRID COM OS NOMES DOS JOGADORES -->
+    <ion-grid style="background-color: transparent; text-align: center; height: 100%">
+      <ion-row>
+        <ion-col>
+          <span class="nomes">{{jogadores[0].nome}}</span>
+        </ion-col>
+        <ion-col size="1">
+          <span class="nomes">VS</span>
+        </ion-col>
+        <ion-col>
+          <span class="nomes">{{jogadores[1].nome}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <span *ngFor="let item of jogadores[0].score">
+            <i class="blade" *ngIf="item.visible === true">{{item.letra}}</i>
+          </span>
+        </ion-col>
+        <ion-col size="1">
+
+        </ion-col>
+        <ion-col>
+          <span *ngFor="let item of jogadores[1].score">
+            <i class="blade" *ngIf="item.visible === true">{{item.letra}}</i>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <!-- APRESENTAÇÃO DE QUAL MANOBRA FOI ESCOLHIDA -->
+  <div *ngIf="manobraEscolhida != null && BladeFinalizado === false" class="centralizar" style="height: 36%">
+    <p>A manobra escolhida foi <strong>{{manobraEscolhida.Nome}}</strong>
+    </p>
+    <ion-card class="bordaStyle" style="max-height: 90%">
+      <img src="{{manobraEscolhida?.Imagem}}">
+    </ion-card>
+  </div>
+
+  <!-- BOTÃO INICIAL PARA SORTEAR A MANOBRA -->
+  <div *ngIf="manobraEscolhida === null && rodada === 1">
+    <ion-row>
+      <ion-col col-12>
+        <button class="buttonStyle" *ngIf="manobraEscolhida === null && rodada === 1" ion-button block
+          (click)="sortearManobra()">
+          <ion-icon name="git-compare"></ion-icon>&nbsp;&nbsp;&nbsp;
+          SORTEAR TRICK
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <!-- GRUPO DE BOTÕES DE OPÇÕES -->
+  <div *ngIf="BladeFinalizado === false && manobraEscolhida != null" style="height: 25%">
+    <ion-grid>
+      <p class="centralizar">Execução feita corretamente por {{JogadorSelecionado.nome}} ?</p>
+      <ion-row>
+        <ion-col col-6 no-padding>
+          <button class="buttonStyle" ion-button block (click)=execucaoDeJogada(true)>
+            <ion-icon name="thumbs-up"></ion-icon>&nbsp;&nbsp;&nbsp;
+            SIM
+          </button>
+        </ion-col>
+        <ion-col col-6 no-padding>
+          <button class="buttonStyle" ion-button block (click)=execucaoDeJogada(false)>
+            <ion-icon name="thumbs-down"></ion-icon>&nbsp;&nbsp;&nbsp;
+            NÃO
+          </button>
+        </ion-col>
+        <ion-col col-12 no-padding>
+          <button class="buttonStyle" ion-button block (click)="sortearManobra()" *ngIf="SortearNovamente === true">
+            <ion-icon name="git-compare"></ion-icon>&nbsp;&nbsp;&nbsp;
+            SORTEAR NOVAMENTE
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- RESULTADO FINAL DO BLADE -->
+  <div *ngIf="BladeFinalizado === true && circleVisibility === false" class="centralizar">
+    <ion-grid no-padding>
+    <ion-row>
+      <ion-col>
+        <h4>O vencedor do B.L.A.D.E foi:</h4>
+        <h1 class="centralizar">{{VencedorBlade.nome}}</h1>
+      </ion-col>
+      <ion-col col-12>
+        <button ion-button block class="buttonStyle" (click)=novoBlade()>
+          <ion-icon name="game-controller-b"></ion-icon>&nbsp;&nbsp;&nbsp;
+          NOVO BLADE
+        </button>
+      </ion-col>
+      <ion-col col-12>
+        <button ion-button block class="buttonStyle" (click)=novoBladeNovosJogadores()>
+          <ion-icon name="people"></ion-icon>&nbsp;&nbsp;&nbsp;
+          MUDAR JOGADORES
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </div>
+
+  <!-- Componente de Carregamento -->
+  <div *ngIf="circleVisibility === true" style="text-align: center">
+    <circle-progress [backgroundColor]="" [radius]="100" [unitsColor]="'#483500'" [outerStrokeWidth]="5"
+      [innerStrokeWidth]="8" [outerStrokeColor]="'#FFFFFF'" [innerStrokeColor]="'#FFFFFF'" [animation]="true"
+      [animationDuration]="300" [renderOnClick]="false" [percent]="100" [showSubtitle]="false" [showInnerStroke]="false"
+      [titleColor]="'#483500'" [subtitle]="'#483500'">
+    </circle-progress>
+  </div>
+
+</ion-content>

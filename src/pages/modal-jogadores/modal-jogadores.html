@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card style="background-color:transparent" class="bordaStyle; centralizar">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <label>Insira abaixo o nome dos jogadores.</label>
+        </ion-col>
+        <ion-col col-12>
+          <ion-list inset>
+            <ion-item>
+              <ion-label color="primary" floating>Jogador 1</ion-label>
+              <ion-input required="true" type="text" #nomeJogador1></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="primary" floating>Jogador 2</ion-label>
+              <ion-input required="true" floating type="text" #nomeJogador2></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+        <ion-col col-12>
+          <ion-list>
+            <ion-item>
+                <ion-label floating style="color: white;">Nível :</ion-label>
+                <ion-select [(ngModel)]="nivelSelecionado">
+                  <ion-option value="{{Nivel.Estreante}}">{{DicNivel.get(Nivel.Estreante)}}</ion-option>
+                  <ion-option value="{{Nivel.Iniciante}}">{{DicNivel.get(Nivel.Iniciante)}}</ion-option>
+                  <ion-option value="{{Nivel.Amador}}">{{DicNivel.get(Nivel.Amador)}}</ion-option>
+                  <ion-option value="{{Nivel.Elite}}">{{DicNivel.get(Nivel.Elite)}}</ion-option>
+                </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+
+
+
+
+        <ion-col col-12>
+          <button ion-button block class="submit-btn" (click)="Submit(nomeJogador1.value,nomeJogador2.value)"
+            type="submit">OK
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>
