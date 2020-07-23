@@ -19,8 +19,6 @@ export class BladePage {
     let nivelSelecionado: eNivel = parseInt(navParams.get('nivelSelecionado'))
     this.nivelSelecionado = nivelSelecionado;
 
-    console.log(this.nivelSelecionado);
-
     switch (nivelSelecionado) {
       case eNivel.Estreante:
 

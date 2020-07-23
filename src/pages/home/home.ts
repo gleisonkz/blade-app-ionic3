@@ -16,15 +16,8 @@ export class HomePage {
 
   }
 
-  // objDadosJogadores = {
-
-  //   nomeJogador1:'',
-  //   nomeJogador2:''
-  // };
-
   pushPageBlade():void{
 
-    //this.exibirModal()
     this.navCtrl.push(ModalJogadoresPage);
   }
 
@@ -37,17 +30,4 @@ export class HomePage {
 
     this.navCtrl.push(ConfiguracoesPage);
   }
-
-  // exibirModal() {
-  //   let profileModal = this.modalCtrl.create(ModalJogadoresPage);
-  //   profileModal.present();
-
-  //   profileModal.onDidDismiss(data => {
-  //     this.objDadosJogadores.nomeJogador1 = data.nomeJogador1;
-  //     this.objDadosJogadores.nomeJogador2 = data.nomeJogador2;
-  //     this.navCtrl.push(BladePage,this.objDadosJogadores);
-  //   });
-  // }
-
-
 }

@@ -15,7 +15,7 @@ export enum eNivel {
   Elite = 4,
 }
 
-export var DicNiveis = new Map<eNivel,string>()
+export const DicNiveis = new Map<eNivel,string>()
 {
   DicNiveis.set(eNivel.Estreante,'Estreante');
   DicNiveis.set(eNivel.Iniciante,'Iniciante');

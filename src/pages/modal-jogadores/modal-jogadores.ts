@@ -28,13 +28,9 @@ export class ModalJogadoresPage {
     return eNivel;
   }
 
-
   get DicNivel() {
     return DicNiveis;
   }
-
-
-
 
   Submit(nomeJogador1: string, nomeJogador2: string) {
 
@@ -43,8 +39,6 @@ export class ModalJogadoresPage {
     if (this.validarInputs(nomeJogador1, nomeJogador2, this.nivelSelecionado) === false) { return };
     this.navCtrl.push(BladePage, { nomeJogador1: nomeJogador1, nomeJogador2: nomeJogador2, nivelSelecionado: this.nivelSelecionado })
   }
-
-
 
   validarInputs(campo1: string, campo2: string, campo3: eNivel) {
 
@@ -60,10 +54,5 @@ export class ModalJogadoresPage {
     else {
       return true;
     }
-
   }
-
-
-
-
 }
